@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Exercise</title>
+</head>
+<body>
+  <h1>Profil</h1>
+  <p>Hier können Sie Ihre Adress-Angaben einsehen und anpaseen.</p>
+
+  <form method="POST" action="index.html">
+      <fieldset>
+          <legend>Persönliche Daten</legend>
+          <label for="tittle">Titel</label>
+          <input type="text" id="tittle" name="tittle" placeholder="Dr.hc" required><br>
+          <label for="firstName">Vorname</label>
+          <input type="text" id="firstName" name="firstName" placeholder="Peter" required><br>
+          <label for="lastName">Nachname</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Muster" required><br>
+          <div>
+              <label>Geschlecht</label>
+              <input type="radio" id="woman" name="geschlecht" value="woman">
+              <label for="woman">W</label>
+              <input type="radio" id="man" name="geschlecht" checked value="man">
+              <label for="man">M</label>
+          </div>
+          <div>
+              <label>Sprache</label>
+              <input type="radio" id="deutsche" name="sprache" value="deutsche" checked>
+              <label for="deutsche">DE</label>
+              <input type="radio" id="français" name="sprache" value="français">
+              <label for="français">FR</label>
+              <input type="radio" id="italian" name="sprache" value="italian">
+              <label for="italian">IT</label>
+          </div>
+      </fieldset>
+
+      <fieldset>
+          <legend>Kontaktdaten</legend>
+          <label for="telefon">Telefon</label>
+          <input type="tel" id="telefon" name="telefon" pattern="[0-9]{10}" required><br>
+          <label for="mobile">Mobile</label>
+          <input type="tel" id="mobile" name="mobile" placeholder="optional" pattern="[0-9]{10}"><br>
+          <label for="hauptNumber">Hauptnummer</label>
+          <input type="tel" id="hauptNumber" name="hauptNumber" placeholder="optional" pattern="[0-9]{10}"><br>
+          <label for="fax">Fax</label>
+          <input type="text" id="fax" name="fax" placeholder="optional" pattern="[0-9]{10}"><br>
+          <label for="mail1">Mail 1</label>
+          <input type="email" id="mail1" name="mail" required><br>
+          <label for="mail2">Mail 2</label>
+          <input type="email" id="mail2" name="mail" placeholder="optional">
+      </fieldset>
+
+      <fieldset>
+          <legend>Adressdaten</legend>
+          <label for="firma">Firma</label>
+          <input type="text" id="firma" name="firma" required><br>
+          <label for="zusatzFirma">Zusatz Firma</label>
+          <input type="text" id="zusatzFirma" name="zusatzFirma" placeholder="optional"><br>
+          <label for="homepage">Homepage</label>
+          <input type="text" id="homepage" name="homepage" placeholder="optional"><br>
+          <label for="adresse">Adresse</label>
+          <label for="hausNr">/ Haus Nr</label>
+          <input type="text" id="adresse" name="adresse" placeholder="Musterstrasse" required>
+          <input type="text" id="hausNr" name="hausNr" placeholder="33" pattern="[0-9]+"><br>
+          <label for="zusatzAdresse">Zusatz Adresse</label>
+          <input type="text" id="zusatzAdresse" name="zusatzAdresse" placeholder="optional"><br>
+          <label for="postfach">Postfach</label>
+          <input type="text" id="postfach" name="postfach" placeholder="optional"><br>
+          <label for="plz">PLZ</label>
+          <label for="ort">/ Ort</label>
+          <input type="text" id="plz" name="plz" placeholder="8800" pattern="[0-9]{4}" required>
+          <input type="text" id="ort" name="ort" placeholder="Musterstadt" required><br>
+          <label for="kanton">Kanton</label>
+          <label for="land">/ Land</label>
+          <input type="text" id="kanton" name="kanton" placeholder="ZH" pattern="[A-Za-z]{2}" title="Two letter Kanton Code" required> 
+          <input type="text" id="land" name="land" placeholder="Schweiz" required>
+      </fieldset>
+
+      <input type="submit" value="Speichern">
+  </form>
+
+</body>
+</html>
