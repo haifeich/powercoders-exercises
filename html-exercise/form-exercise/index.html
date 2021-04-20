@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Exercise</title>
+    <!-- The placeholder text should be italic.-->
+    <style>
+    input:placeholder-shown {
+        font-style: italic;
+     }
+     </style>
 </head>
 <body>
   <h1>Profil</h1>
@@ -19,22 +25,35 @@
           <input type="text" id="firstName" name="firstName" placeholder="Peter" required><br>
           <label for="lastName">Nachname</label>
           <input type="text" id="lastName" name="lastName" placeholder="Muster" required><br>
-          <div>
-              <label>Geschlecht</label>
-              <input type="radio" id="woman" name="geschlecht" value="woman">
-              <label for="woman">W</label>
-              <input type="radio" id="man" name="geschlecht" checked value="man">
-              <label for="man">M</label>
-          </div>
-          <div>
-              <label>Sprache</label>
-              <input type="radio" id="deutsche" name="sprache" value="deutsche" checked>
-              <label for="deutsche">DE</label>
-              <input type="radio" id="français" name="sprache" value="français">
-              <label for="français">FR</label>
-              <input type="radio" id="italian" name="sprache" value="italian">
-              <label for="italian">IT</label>
-          </div>
+          <label>Geschlecht</label>
+          <ul>
+              <li>
+                  <input type="radio" id="woman" name="geschlecht" value="woman">
+                  <label for="woman">W</label>
+              </li>
+              <li>
+                  <input type="radio" id="man" name="geschlecht" checked value="man">
+                  <label for="man">M</label>
+              </li>
+          </ul>
+         
+          <label>Sprache</label>
+          <!-- Better to use a list, and it would be easier to style in the future with an extra li-tag -->
+          <ul>
+              <li>
+                  <input type="radio" id="deutsche" name="sprache" value="deutsche" checked>
+                  <label for="deutsche">DE</label>
+              </li>
+            <li>
+                <!-- Don't use special character in ids and also the for attribute -->
+                <input type="radio" id="francais" name="sprache" value="francais">
+                <label for="francais">FR</label>
+            </li>
+            <li>
+                <input type="radio" id="italian" name="sprache" value="italian">
+                <label for="italian">IT</label>
+            </li>
+          </ul>
       </fieldset>
 
       <fieldset>
@@ -75,7 +94,8 @@
           <input type="text" id="ort" name="ort" placeholder="Musterstadt" required><br>
           <label for="kanton">Kanton</label>
           <label for="land">/ Land</label>
-          <input type="text" id="kanton" name="kanton" placeholder="ZH" pattern="[A-Za-z]{2}" title="Two letter Kanton Code" required> 
+          <!-- Kanton should be optional, not every country have a two letter shortcut Kanton. -->
+          <input type="text" id="kanton" name="kanton" placeholder="ZH" pattern="[A-Za-z]{2}" title="Two letter Kanton Code"> 
           <input type="text" id="land" name="land" placeholder="Schweiz" required>
       </fieldset>
 
