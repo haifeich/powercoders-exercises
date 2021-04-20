@@ -1,0 +1,89 @@
+html {
+    background: rgb(194, 193, 192);
+    box-sizing: border-box;
+    /* resize the root size to 10px */
+    font-size: 0.625em;
+}
+
+* { 
+    /* can be overrided easily for the children, not only the parent but also che children */
+    box-sizing: inherit; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background: white;
+    margin: 5rem auto; 
+    /* auto left and right side make it centered */
+    padding: 5rem;
+    width: 90%;
+    text-align: center;
+}
+
+h1, h2{
+    color: rgb(175, 175, 174);
+    font-size: 3.5rem;
+    font-weight: normal;
+    margin: 4rem 0;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin: 2.5rem 0;
+}
+
+p {
+    margin-bottom: 6rem;
+}
+ 
+strong {
+    color: black;
+    font-size: inherit;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+li {
+    flex: 1 0 47.3rem;
+    padding: 0 3rem;
+}
+
+img {
+    /* add height auto */
+    height: auto;
+    width: 100%;
+}
+
+button {
+    background: white;
+    border: 1px solid black;
+    /*  margin: 0 auto;  */
+    /*sometimes margin auto doesn't work because it's a inline element */
+    /*if it doesnt't work go to the parent element set text-align center */
+    min-width: 25rem;
+    padding: 2rem;
+    text-transform: uppercase;
+}
+
+
+/* grid */
+/*
+ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(47.3rem, 1fr));
+  grid-gap: 1rem;
+}
