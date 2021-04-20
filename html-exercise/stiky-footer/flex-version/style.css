@@ -1,0 +1,12 @@
+/* flex version */
+html, body {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex: auto;
+    background-color: lightblue;
+  } 
