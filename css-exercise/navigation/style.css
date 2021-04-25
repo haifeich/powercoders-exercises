@@ -1,0 +1,121 @@
+/* Mobile version first Best Practice */
+html {
+    box-sizing: border-box;
+    font-size: 0.625em;
+}
+
+*,*::before,*::after { 
+    box-sizing: inherit; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+/* Visually hide the checkbox*/
+#trigger-nav {
+    position: fixed;  /* out of flow in order to move it "away" */
+    right: -1rem; 
+    width: 1px;
+    opacity: 0.01; /* Visually hide elements, still in the flow for the screen reader. The other settings are helpful when it appears in the screen.*/
+}
+
+label[for="trigger-nav"] {
+    position: fixed;
+    border:0.3rem  solid #414040;
+    border-left: none;
+    border-right: none;
+    width: 2.5rem;
+    height: 2rem;
+    right: 2rem;
+    top: 2rem;
+    /*  text-indent: -99999px; or opacity   can't add border to make the 3 lines off canvas menu, they gone with the text. When visually hide doesn't work, should nest the text in a span tag, olny for styling, span for inline, div for block*/
+    z-index: 1;   /* appears in front. Only valid when it is out of flow */
+    cursor: pointer; /*mouse seeting to indicate the user to click-on*/
+}
+
+label[for="trigger-nav"] span {
+    font-size: 1px; /* Usually useful to create visually hidden of inline element with font-size*/
+    opacity: 0.01;  
+}
+
+/*  we visually hidden the span tag then add before and after pesudo element to the label. Use its border to creat the hamburger lines. */
+
+label[for="trigger-nav"]::after {
+    border-bottom: 0.3rem solid #414040;
+    content: "";     /* required value for pesudo element*/
+    display: block; /* pesudo element does't exisit, need to give a state*/
+    position: relative; /* to move the border to the middle */
+    top: -1.7rem;
+}
+
+/* When the nav bar shows up, the hamburger lines turn into a X close sign*/
+#trigger-nav:checked + label {
+    border: 0;
+}
+
+/* Use ::before and ::after to creat X*/
+#trigger-nav:checked + label[for="trigger-nav"]::after{
+    border-color: #000000;
+    transform: rotate(45deg); 
+}
+
+#trigger-nav:checked + label[for="trigger-nav"]::before{
+    border-bottom: 0.3rem solid #000000;
+    content: "";      /*The same as ::after*/
+    display: block;
+    position: relative;
+    top: 0.9rem;     /* Move them to the same positon in order to rotate from the same point*/
+    transform: rotate(135deg);
+ }
+
+/* When it's triggred the nav bar appears from right side (from -80% to 0)*/
+#trigger-nav:checked + label + nav {
+    right: 0;
+}
+
+nav {
+    background-color: rgb(192, 242, 247);
+    width: 80%;
+    height: 100%;
+    position: fixed;
+    right: -80%;
+    transition: right 0.5s;  /* transtion value should be the property(here is the right property) which is needed to change. */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;  
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 0;
+}
+
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: #414040;
+    padding: 2.5rem;
+}
+
+/* for big tablets and laptop */
+@media screen and (min-width: 50em){
+    nav {
+        position:static;
+        width: 100%;
+    }
+    nav ul {
+        flex-direction: row; 
+    }
+
+    nav a {
+        font-size: 2vw; /* the font size according to the width of the viewport*/
+    }
+    label[for="trigger-nav"] {
+        display: none;
+    }
+}
+
+
