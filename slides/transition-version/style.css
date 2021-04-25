@@ -1,0 +1,68 @@
+html {
+    box-sizing: border-box;
+    font-size: 0.625em;
+}
+
+*,*::before,*::after { 
+    box-sizing: inherit; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+  position: fixed;
+  top: 80vh;
+  width: 100vw;
+  text-align: center;
+}
+  
+a {
+    display: inline-block;
+    padding: 2rem;
+}
+
+/* Set the whole section fixed, out of flow, 500vw width, each article(slide) ocupies 100vw. The purpose is to move the section with transtion.*/
+section{
+    width: 500vw;
+    display: flex;
+    left: 0;
+    position: fixed;
+    transition: left 2s;
+}
+
+article {
+    width:100vw;
+    height: 80vh;
+    padding-left: 45vw;
+    padding-top: 30vh;
+    font-size: 9rem;
+}
+
+/* We can't set the anchor to the article tag, because we can't select the parent tag section. In order to achieve this, we need to add the anchors to a series of no content span tag.*/
+#slide1:target ~ section{
+    left: 0;
+}
+#slide2:target ~ section {
+    left: -100vw;
+}
+#slide3:target ~ section{
+    left: -200vw;
+}
+#slide4:target ~ section{
+    left: -300vw;
+}
+#slide5:target ~ section {
+    left: -400vw;
+}
+
+article:nth-child(odd) {
+    background-color: rgb(68, 71, 114);
+}
+
+article:nth-child(even) {
+    background-color: rgb(26, 117, 23);
+}
+
+
