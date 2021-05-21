@@ -1,0 +1,74 @@
+html {
+    box-sizing: border-box;
+    font-size: 0.625em;
+}
+
+*,*::before,*::after { 
+    box-sizing: inherit; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #525659;
+}
+
+main {
+    background-color: #e5e5e5;
+    width: 80%;
+    margin: 2rem auto;
+}
+
+main section{
+    background-color: #edeef0;
+    margin: 5rem;
+    text-align: center;
+}
+
+label, input {
+    display: block;
+    margin: 0.5rem auto;
+}
+
+input {
+    width: 90%;
+}
+
+button {
+    margin: 1rem 0 1rem 1rem;
+    padding: 0.5rem;
+}
+
+#show {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+article {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    flex: 1 1 auto;
+}
+
+article span {
+    position: relative;
+    top: 1.5rem;
+}
+
+#submit {
+    background-color: #0175d8;
+    color: #fff;
+}
+
+.visit {
+    background-color: #fff;
+}
+
+.delete {
+    background-color: #d9544f;
+    color: #fff;
+}
