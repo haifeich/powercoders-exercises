@@ -61,8 +61,8 @@ btnUsd.addEventListener('click',
         data.then(result => {usdChf = result.quotes.USDCHF;})
             .then(()=>{
                 calculate();
-                outPut = Math.round(outPut/usdChf *20)/20;
-                tipOutPut = Math.round(tipOutPut/usdChf *20)/20;
+                outPut = Math.round(outPut*usdChf *20)/20;
+                tipOutPut = Math.round(tipOutPut*usdChf *20)/20;
                 showResult.innerText = `You bill is ${outPut} USD total, of which ${tipOutPut} USD is the tip.`;
             })   
     })
@@ -74,8 +74,8 @@ async function currencies (){
     data.then(result => {usdEur = result.quotes.USDEUR; usdChf = result.quotes.USDCHF;})
         .then(()=>{
             calculate();
-            outPut = Math.round(outPut/usdChf/usdEur *20)/20;
-            tipOutPut = Math.round(tipOutPut/usdChf/usdEur *20)/20;
+            outPut = Math.round(outPut*usdChf/usdEur *20)/20;
+            tipOutPut = Math.round(tipOutPut*usdChf/usdEur *20)/20;
             showResult.innerText = `You bill is ${outPut} EUR total, of which ${tipOutPut} EUR is the tip.`;
         })   
 })
